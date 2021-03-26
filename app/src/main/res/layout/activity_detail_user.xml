@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_detail_user">
+
+    <FrameLayout
+        android:id="@+id/layoutA"
+        android:layout_width="match_parent"
+        android:layout_height="326dp"
+        android:background="@color/navyblue_700" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_img"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="39dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/user3" />
+
+    <LinearLayout
+        android:id="@+id/user_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_img"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_profile_name"
+            style="@style/TextContent.Heading"
+            android:text="@string/nama_lengkap" />
+
+        <TextView
+            android:id="@+id/tv_profile_username"
+            style="@style/TextContent.Heading"
+            android:layout_marginStart="4dp"
+            android:text="@string/username"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_followers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_detail"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        android:elevation="4dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:stretchColumns="0,1,2">
+
+            <TableRow
+                android:id="@+id/tr_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_followers"
+                    style="@style/TextCountList.Detail"
+                    android:text="@string/followers"/>
+
+                <TextView
+                    android:id="@+id/tv_following"
+                    style="@style/TextCountList.Detail"
+                    android:text="@string/following"/>
+
+                <TextView
+                    android:id="@+id/tv_repository"
+                    style="@style/TextCountList.Detail"
+                    android:text="@string/repository"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr_counts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_followers_count"
+                    style="@style/CountList.Detail"
+                    android:text="@string/count" />
+
+                <TextView
+                    android:id="@+id/tv_following_count"
+                    style="@style/CountList.Detail"
+                    android:text="@string/count"/>
+
+                <TextView
+                    android:id="@+id/tv_repository_count"
+                    style="@style/CountList.Detail"
+                    android:text="@string/count"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/iv_company"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_below="@id/cv_followers"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTintMode="add"
+        android:src="@drawable/ic_baseline_apartment_24"
+        app:tint="@color/navyblue_500"/>
+
+    <TextView
+        android:id="@+id/tv_profile_company"
+        style="@style/TextContent.Medium"
+        android:layout_below="@id/cv_followers"
+        android:layout_toEndOf="@id/iv_company"
+        android:layout_marginTop="16dp"
+        android:text="@string/company"/>
+
+    <ImageView
+        android:id="@+id/iv_location"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/tv_profile_company"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_baseline_home_24"
+        app:tint="@color/navyblue_500"/>
+
+    <TextView
+        android:id="@+id/tv_profile_location"
+        style="@style/TextContent.Medium"
+        android:layout_below="@id/tv_profile_company"
+        android:layout_toEndOf="@id/iv_location"
+        android:layout_marginTop="16dp"
+        android:text="@string/location"/>
+
+</RelativeLayout>
